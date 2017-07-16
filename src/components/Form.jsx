@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { uploadImage } from '../redux/actionCreators';
 
 class Form extends React.Component {
 	constructor(props) {
@@ -8,7 +10,7 @@ class Form extends React.Component {
 	onSubmit(e) {
 		e.preventDefault();
 		console.log('submitting')
-		console.log(this.input.value)
+		this.props.dispatch(uploadImage(this.input.value));
 	}
 	render() {
 		return (
@@ -20,4 +22,4 @@ class Form extends React.Component {
 	}
 }
 
-export default Form;
+export default connect()(Form);

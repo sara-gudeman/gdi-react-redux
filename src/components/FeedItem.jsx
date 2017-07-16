@@ -14,9 +14,9 @@ import Likes from './Likes.jsx';
 // 	}
 // }
 
-const Card = ({ url, likes }) => {
+const FeedItem = ({ url, likes }) => {
 	return (
-		<div className="Card">
+		<div className="FeedItem">
 			<img src={url} />
 			<Likes totalLikes={likes} />
 			Comments
@@ -24,4 +24,4 @@ const Card = ({ url, likes }) => {
 	);
 };
 
-export default Card;
+export default FeedItem;

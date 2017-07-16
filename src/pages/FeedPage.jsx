@@ -1,26 +1,32 @@
 import React from 'react';
-import Card from '../components/Card.jsx';
+import { connect } from 'react-redux';
+import FeedItem from '../components/FeedItem.jsx';
 import Form from '../components/Form.jsx';
-import data from '../../data.json';
 
-const FeedPage = () => {
+// this should have a container
+const FeedPage = ({ photos }) => {
 	return (
 		<div className="FeedPage">
 			<Form />
 			{
-				data.cats.map((cat, i) => {
+				photos.map((photo, i) => {
 					return (
-						<Card
-							key={i}
-							url={cat.url}
-							likes={cat.likes}
+						<FeedItem
+							key={`${photo.url}-${i}`}
+							url={photo.url}
+							likes={photo.likes}
 						/>
 					);
 				})
 			}
-			<Card />
 		</div>
 	);
 };
 
-export default FeedPage;
+const mapStateToProps = (state) => {
+	return {
+		photos: state.photos
+	};
+};
+
+export default connect(mapStateToProps)(FeedPage);
