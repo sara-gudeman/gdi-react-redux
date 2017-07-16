@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Likes from './Likes.jsx';
 
 // class Card extends React.Component {
@@ -14,14 +15,14 @@ import Likes from './Likes.jsx';
 // 	}
 // }
 
-const FeedItem = ({ url, likes }) => {
+const FeedItem = ({ url, likes, id }) => {
 	return (
 		<div className="FeedItem">
 			<img src={url} />
-			<Likes totalLikes={likes} />
+			<Likes totalLikes={likes} id={id} />
 			Comments
 		</div>
 	);
 };
 
-export default FeedItem;
+export default connect()(FeedItem);

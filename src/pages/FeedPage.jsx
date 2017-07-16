@@ -10,11 +10,13 @@ const FeedPage = ({ photos }) => {
 			<Form />
 			{
 				photos.map((photo, i) => {
+					/* should we just be passing in the whole photo here?*/
 					return (
 						<FeedItem
 							key={`${photo.url}-${i}`}
 							url={photo.url}
 							likes={photo.likes}
+							id={photo.id}
 						/>
 					);
 				})
