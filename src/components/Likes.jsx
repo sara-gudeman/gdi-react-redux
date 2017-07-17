@@ -32,6 +32,7 @@ class Likes extends React.Component {
 	}
 }
 
+// should this be a container component?
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		handleLikeButtonClick: () => {
