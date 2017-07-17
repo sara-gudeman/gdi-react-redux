@@ -7,18 +7,18 @@ import Header from './components/Header.jsx';
 import store from './redux/store';
 
 // how do we want to divide up where to put BrowserRouter, Provider, etc? We could put it in index.js
-export default class App extends React.Component {
-	render() {
-		return (
-		  <BrowserRouter>
-				<Provider store={store}>
-						<div className="App">
-							<Header />
-			        <Route exact path="/" component={FeedPage} />
-				      <Route path="/profile" component={ProfilePage} />
-			      </div>
-	      </Provider>
-      </BrowserRouter>
-    );
-  }
+const App = () => {
+	return (
+	  <BrowserRouter>
+			<Provider store={store}>
+					<div className="App">
+						<Header />
+		        <Route exact path="/" component={FeedPage} />
+			      <Route path="/profile" component={ProfilePage} />
+		      </div>
+      </Provider>
+    </BrowserRouter>
+  );
 }
+
+export default App;
