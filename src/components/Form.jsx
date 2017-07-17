@@ -14,7 +14,7 @@ class Form extends React.Component {
 	}
 	render() {
 		return (
-			<form>
+			<form className="Form">
 				<input ref={(node) => {this.input = node}} />
 				<button onClick={this.onSubmit}>Submit</button>
 			</form>

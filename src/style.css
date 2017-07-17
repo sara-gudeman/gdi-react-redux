@@ -38,9 +38,29 @@ body {
 	margin-bottom: 15px;
 }
 
+.FeedItem img {
+  width: 100%;
+}
+
+.Form {
+  display: flex;
+}
+
+.Form input {
+  flex-grow: 1;
+  padding: 5px;
+}
+
+.Form button {
+  background: #d8ae64;
+  border: none;
+  color: white;
+}
+
 .Likes {
-	display: flex;
-	flex-flow: row wrap;
+  display: flex;
+  flex-flow: row wrap;
+  padding: 20px;
 }
 
 .Likes span {
