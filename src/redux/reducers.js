@@ -29,10 +29,7 @@ const photos = (state = initialPhotos, action) => {
 	return state;
 };
 
-const visibilityFilter = (state = 'SHOW_ALL', action) => {
-	return state;
-};
-
-const rootReducer = combineReducers({ photos, visibilityFilter });
+// this is for demonstration purposes. if you had more than one reducer you would need to use combine reducers
+const rootReducer = combineReducers({ photos });
 
 export default rootReducer;
