@@ -25,7 +25,7 @@ class Likes extends React.Component {
 			<div className="Likes">
 				<span>{ this.props.totalLikes } likes</span>
 				<span className="Likes-like-button" onClick={this.handleLikeButtonClick}>
-					{this.props.userLikedPhoto ? 'Unlike' : 'Like'}
+					{this.props.userLiked ? 'Unlike' : 'Like'}
 				</span>
 			</div>
 		);

@@ -17,6 +17,7 @@ const FeedPage = ({ photos }) => {
 							url={photo.url}
 							likes={photo.likes}
 							id={photo.id}
+							userLiked={photo.userLiked}
 						/>
 					);
 				})

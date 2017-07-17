@@ -15,12 +15,11 @@ import Likes from './Likes.jsx';
 // 	}
 // }
 
-const FeedItem = ({ url, likes, id }) => {
+const FeedItem = ({ url, likes, id, userLiked }) => {
 	return (
 		<div className="FeedItem">
 			<img src={url} />
-			<Likes totalLikes={likes} id={id} />
-			Comments
+			<Likes totalLikes={likes} id={id} userLiked={userLiked} />
 		</div>
 	);
 };
