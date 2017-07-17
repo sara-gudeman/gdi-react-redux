@@ -2,7 +2,6 @@ import { combineReducers } from 'redux';
 import data from '../../data.json';
 const initialPhotos = data.photos;
 
-// these would usually be in different files
 const photos = (state = initialPhotos, action) => {
 	if (action.type === 'UPLOAD_IMAGE') {
 		return [
@@ -29,10 +28,7 @@ const photos = (state = initialPhotos, action) => {
 	return state;
 };
 
-const visibilityFilter = (state = 'SHOW_ALL', action) => {
-	return state;
-};
-
-const rootReducer = combineReducers({ photos, visibilityFilter });
+// this is for demonstration purposes. if you had more than one reducer you would need to use combine reducers
+const rootReducer = combineReducers({ photos });
 
 export default rootReducer;
