@@ -17,8 +17,10 @@ const photos = (state = initialPhotos, action) => {
 		return state.map((photo) => {
 			const userLikedPhoto = photo.userLiked;
 			if (photo.id === action.id) {
-				photo.userLiked = !userLikedPhoto,
-				photo.likes = !userLikedPhoto ? photo.likes + 1 : photo.likes - 1
+				const newPhoto = Object.assign({}, photo);
+				newPhoto.userLiked = !userLikedPhoto,
+				newPhoto.likes = !userLikedPhoto ? photo.likes + 1 : photo.likes - 1
+				return newPhoto;
 			}
 			return photo;
 		});
