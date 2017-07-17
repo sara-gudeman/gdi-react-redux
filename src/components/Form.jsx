@@ -10,7 +10,7 @@ class Form extends React.Component {
 	onSubmit(e) {
 		e.preventDefault();
 		console.log('submitting')
-		this.props.dispatch(uploadImage(this.input.value));
+		this.props.handleUploadImage(this.input.value);
 	}
 	render() {
 		return (
@@ -22,4 +22,12 @@ class Form extends React.Component {
 	}
 }
 
-export default connect()(Form);
+const mapDispatchToProps = (dispatch) => {
+	return {
+		handleUploadImage: (userInput) => {
+			dispatch(uploadImage(userInput));
+		}
+	};
+};
+
+export default connect(null, mapDispatchToProps)(Form);
