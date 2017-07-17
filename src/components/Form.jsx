@@ -1,6 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { uploadImage } from '../redux/actionCreators';
 
 class Form extends React.Component {
 	constructor(props) {
@@ -8,15 +6,15 @@ class Form extends React.Component {
 		this.state = {
 			userInput: ''
 		};
-		this.onSubmit = this.onSubmit.bind(this);
+		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
-	onSubmit(e) {
+	handleFormSubmit(e) {
 		e.preventDefault();
 		console.log('submitting')
 		// normally uploading an image would be some kind of promise and we could reset the userInput after success
 		// this is a little messy
-		this.props.handleUploadImage(this.state.userInput);
+		this.props.onSubmit(this.state.userInput);
 		this.setState(() => {
 			return {
 				userInput: ''
@@ -37,18 +35,10 @@ class Form extends React.Component {
 		return (
 			<form className="Form">
 				<input placeholder="enter a url here" value={this.state.userInput} onChange={this.handleInputChange} />
-				<button onClick={this.onSubmit}>Submit</button>
+				<button onClick={this.handleFormSubmit}>Submit</button>
 			</form>
 		);
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-	return {
-		handleUploadImage: (userInput) => {
-			dispatch(uploadImage(userInput));
-		}
-	};
-};
-
-export default connect(null, mapDispatchToProps)(Form);
+export default Form;

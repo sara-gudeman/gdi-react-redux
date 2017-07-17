@@ -1,35 +1,14 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import FeedItem from '../components/FeedItem.jsx';
-import Form from '../components/Form.jsx';
+import FeedListContainer from '../containers/FeedListContainer.jsx';
+import UploadImageForm from '../containers/UploadImageForm.jsx';
 
-// this should have a container
-const FeedPage = ({ photos }) => {
+const FeedPage = () => {
 	return (
 		<div className="FeedPage">
-			<Form />
-			{
-				photos.map((photo, i) => {
-					/* should we just be passing in the whole photo here?*/
-					return (
-						<FeedItem
-							key={`${photo.url}-${i}`}
-							url={photo.url}
-							likes={photo.likes}
-							id={photo.id}
-							userLiked={photo.userLiked}
-						/>
-					);
-				})
-			}
+			<UploadImageForm />
+			<FeedListContainer />
 		</div>
 	);
 };
 
-const mapStateToProps = (state) => {
-	return {
-		photos: state.photos
-	};
-};
-
-export default connect(mapStateToProps)(FeedPage);
+export default FeedPage;

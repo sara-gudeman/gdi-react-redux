@@ -1,24 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Image from './Image.jsx';
 import Likes from './Likes.jsx';
 
-// class Card extends React.Component {
-// 	render() {
-// 		return (
-// 			<div className="Card">
-// 				<img src="http://forgifs.com/gallery/d/217571-1/Cat-kiss-nuzzle.gif" />
-// 				<p>Likes:</p>
-// 				<p>Like</p>
-// 				Comments
-// 			</div>
-// 		);
-// 	}
-// }
-
-const FeedItem = ({ url, likes, id, userLiked }) => {
+const FeedItem = ({ photo }) => {
+    const { url, likes, id, userLiked } = photo;
 	return (
 		<div className="FeedItem">
-			<img src={url} />
+            <Image url={url} />
 			<Likes totalLikes={likes} id={id} userLiked={userLiked} />
 		</div>
 	);
