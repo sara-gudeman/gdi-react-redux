@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Image from './Image.jsx';
 import Likes from './Likes.jsx';
 
@@ -13,4 +12,4 @@ const FeedItem = ({ photo }) => {
 	);
 };
 
-export default connect()(FeedItem);
+export default FeedItem;
