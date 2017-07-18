@@ -1,4 +1,3 @@
-// create a class component that toggles a button on and off
 import React from 'react';
 
 // make a class component that renders 'Hello World' in a div
