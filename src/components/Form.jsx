@@ -1,34 +1,32 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { uploadImage } from '../redux/actionCreators';
 
 class Form extends React.Component {
-	constructor(props) {
-		super(props);
+	constructor() {
+		super();
 		this.state = {
 			userInput: ''
 		};
 		this.handleFormSubmit = this.handleFormSubmit.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
-	handleFormSubmit(e) {
-		e.preventDefault();
+	handleFormSubmit(event) {
+		event.preventDefault();
 		console.log('submitting')
 		// normally uploading an image would be some kind of promise and we could reset the userInput after success
 		// this is a little messy
 		this.props.onSubmit(this.state.userInput);
-		this.setState(() => {
-			return {
-				userInput: ''
-			};
+		this.setState({
+			userInput: ''
 		});
 	}
-	handleInputChange(e) {
+	handleInputChange(event) {
 		// this is a tricky part...if we just user simple setState we don't need to do this
-		const value = e.target.value;
+		const value = event.target.value;
 		// do we want to just do a simple setState here with an object? or keep using functions?
-		this.setState(() => {
-			return {
-				userInput: value
-			};
+		this.setState({
+			userInput: value
 		});
 	}
 	render() {
@@ -41,4 +39,12 @@ class Form extends React.Component {
 	}
 }
 
-export default Form;
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSubmit: (userInput) => {
+            dispatch(uploadImage(userInput));
+        }
+    };
+};
+
+export default connect(null, mapDispatchToProps)(Form);

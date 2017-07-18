@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import FeedItem from './FeedItem.jsx';
 
 const FeedList = ({ photos }) => {
@@ -18,4 +19,10 @@ const FeedList = ({ photos }) => {
     );
 };
 
-export default FeedList;
+const mapStateToProps = (state) => {
+    return {
+        photos: state.photos
+    };
+};
+
+export default connect(mapStateToProps)(FeedList);

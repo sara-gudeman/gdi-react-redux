@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 import ProfilePage from './pages/ProfilePage.jsx';
-import FeedPage from './pages/FeedPage.jsx';
+import HomePage from './pages/HomePage.jsx';
 import Header from './components/Header.jsx';
 import store from './redux/store';
 
@@ -13,7 +13,7 @@ const App = () => {
 			<Provider store={store}>
 					<div className="App">
 						<Header />
-		        <Route exact path="/" component={FeedPage} />
+		        <Route exact path="/" component={HomePage} />
 			      <Route path="/profile" component={ProfilePage} />
 		      </div>
       </Provider>
