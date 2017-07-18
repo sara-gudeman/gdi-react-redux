@@ -1,3 +1,11 @@
 import React from 'react';
 
-// create a ProfilePage component here
+const ProfilePage = () => {
+    return (
+        <div className="ProfilePage">
+            This is a profile page.
+        </div>
+    );
+};
+
+export default ProfilePage;
