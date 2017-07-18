@@ -1,17 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Header = () => {
-  return (
-    <ul className="Header">
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/profile">Profile</Link>
-      </li>
-    </ul>
-  );
-};
+// write a stateless functional component for the header
+// make it an undordered list, with two list elements Home and profile
+// be sure to include the class Header to get the correct styles
 
-export default Header;
+// don't forget to export your component!
