@@ -2,13 +2,13 @@ import React from 'react';
 import FeedList from '../components/FeedList.jsx';
 import Form from '../components/Form.jsx';
 
-const FeedPage = () => {
+const HomePage = () => {
 	return (
-		<div className="FeedPage">
+		<div className="HomePage">
 			<Form />
 			<FeedList />
 		</div>
 	);
 };
 
-export default FeedPage;
+export default HomePage;
