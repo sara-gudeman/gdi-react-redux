@@ -10,9 +10,9 @@ class ButtonToggle extends React.Component {
     this.handleButtonClick = this.handleButtonClick.bind(this);
   }
   handleButtonClick() {
-    this.setState((state) => {
+    this.setState((prevState) => {
       return {
-        toggledOn: !state.toggledOn
+        toggledOn: !prevState.toggledOn
       };
     });
   }
