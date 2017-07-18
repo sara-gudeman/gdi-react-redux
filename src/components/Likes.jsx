@@ -13,7 +13,6 @@ const Likes = ({ totalLikes, handleLikeButtonClick, userLiked}) => {
 	);
 };
 
-// should this be a container component?
 const mapDispatchToProps = (dispatch, ownProps) => {
 	return {
 		handleLikeButtonClick: () => {
