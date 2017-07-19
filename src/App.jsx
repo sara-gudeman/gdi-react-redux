@@ -1,6 +1,11 @@
 import React from 'react';
 
-// write a functional component
-// make it a div with a class name of App
+const App = () => {
+    return (
+        <div className="App">
+            Hello from the App component!
+        </div>
+    );
+};
 
-// don't forget to export your component!
+export default App;
