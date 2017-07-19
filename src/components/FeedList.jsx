@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import FeedItem from './FeedItem.jsx';
 
-const FeedList = ({ photos }) => {
+const FeedList = (props) => {
+    const { photos } = props;
     return (
         <div className="FeedList">
             {
