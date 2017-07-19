@@ -1,12 +1,11 @@
 import React from 'react';
-import FeedList from '../components/FeedList.jsx';
-import Form from '../components/Form.jsx';
 
+// create your HomePage component here
+// it should contain your Form component and FeedList component
 const HomePage = () => {
 	return (
 		<div className="HomePage">
-			<Form />
-			<FeedList />
+			Hello from the HomePage!
 		</div>
 	);
 };

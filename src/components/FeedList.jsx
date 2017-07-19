@@ -1,29 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import FeedItem from './FeedItem.jsx';
+import data from '../../data.json';
 
-const FeedList = (props) => {
-    const { photos } = props;
-    return (
-        <div className="FeedList">
-            {
-                photos.map((photo, i) => {
-                    return (
-                        <FeedItem
-                            key={`${photo.url}-${i}`}
-                            photo={photo}
-                        />
-                    );
-                })
-            }
-        </div>
-    );
-};
+const { photos } = data;
 
-const mapStateToProps = (state) => {
-    return {
-        photos: state.photos
-    };
-};
-
-export default connect(mapStateToProps)(FeedList);
+// create a FeedList component here
+// for each photo, create a FeedItem component
