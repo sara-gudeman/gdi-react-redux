@@ -2,8 +2,8 @@ import React from 'react';
 
 // create a class component that toggles a button on and off
 class ButtonToggle extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       toggledOn: false
     };

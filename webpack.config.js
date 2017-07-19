@@ -17,13 +17,15 @@ module.exports = {
     historyApiFallback: true,
     port: 9000
   },
+  resolve: {
+    extensions: ['.js', '.jsx', '.json']
+  },
   // webpack only understands javascript! loaders transform files into modules for webpack
   module: {
     // this is an array of loaders
     loaders: [
       // test determines which file extensions to run the loader on
-      { test: /\.js$/, loader: 'babel-loader', exclude: /node_modules/ },
-      { test: /\.jsx$/, loader: 'babel-loader', exclude: /node_modules/ },
+      { test: /\.jsx?$/, loader: 'babel-loader', exclude: /node_modules/ },
       { test: /\.css$/, use: ['style-loader', 'css-loader']}
     ]
   }

@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { uploadImage } from '../redux/actionCreators';
 
 class Form extends React.Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 		this.state = {
 			userInput: ''
 		};

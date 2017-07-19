@@ -2,8 +2,8 @@ import React from 'react';
 
 // we'll do this
 class NameAnnouncer extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       userInput: ''
     };
