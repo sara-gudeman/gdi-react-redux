@@ -2,7 +2,8 @@ import React from 'react';
 import Image from './Image.jsx';
 import Likes from './Likes.jsx';
 
-const FeedItem = ({ photo }) => {
+const FeedItem = (props) => {
+  const { photo } = props;
   const { url, likes, id, userLiked } = photo;
   return (
     <div className="FeedItem">

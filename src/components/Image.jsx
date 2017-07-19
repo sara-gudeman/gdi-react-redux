@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Image = ({ url }) => {
+const Image = (props) => {
+    const { url } = props;
     return (
         <img className="Image" src={ url } />
     );
