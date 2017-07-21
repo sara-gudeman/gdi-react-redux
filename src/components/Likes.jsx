@@ -1,25 +1,30 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { toggleLike } from '../redux/actionCreators';
 
-const Likes = (props) => {
-	const { totalLikes, handleLikeButtonClick, userLiked } = props;
-	return (
-		<div className="Likes">
-			<span>{ totalLikes } likes</span>
-			<span className="Likes-like-button" onClick={handleLikeButtonClick}>
-				{userLiked ? 'Unlike' : 'Like'}
-			</span>
-		</div>
-	);
-};
+class Likes extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			numLikes: this.props.totalLikes
+		};
+		this.handleLikeButtonClick = this.handleLikeButtonClick.bind(this);
+	}
+	handleLikeButtonClick() {
+		this.setState((prevState) => {
+			return {
+				numLikes: prevState.numLikes + 1
+			};
+		});
+	}
+	render() {
+		return (
+			<div className="Likes">
+				<span>{ this.state.numLikes } likes</span>
+				<span className="Likes-like-button" onClick={this.handleLikeButtonClick}>
+					Like
+				</span>
+			</div>
+		);
+	}
+}
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-	return {
-		handleLikeButtonClick: () => {
-			dispatch(toggleLike(ownProps.id));
-		}
-	};
-};
-
-export default connect(null, mapDispatchToProps)(Likes);
+export default Likes;
