@@ -20,10 +20,4 @@ const FeedList = (props) => {
     );
 };
 
-const mapStateToProps = (state) => {
-    return {
-        photos: state.photos
-    };
-};
-
-export default connect(mapStateToProps)(FeedList);
+export default FeedList;
