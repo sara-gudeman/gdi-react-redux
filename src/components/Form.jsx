@@ -14,7 +14,7 @@ class Form extends React.Component {
 	handleFormSubmit(event) {
 		event.preventDefault();
 		console.log('submitting')
-		this.props.onSubmit(this.state.userInput);
+		this.props.handleAddPhoto(this.state.userInput);
 		this.setState({
 			userInput: ''
 		});
@@ -35,12 +35,4 @@ class Form extends React.Component {
 	}
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        onSubmit: (userInput) => {
-            dispatch(uploadImage(userInput));
-        }
-    };
-};
-
-export default connect(null, mapDispatchToProps)(Form);
+export default Form;
